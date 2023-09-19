@@ -7,6 +7,7 @@ import (
 )
 
 func TestNextToken(t *testing.T) {
+
 	input := `=+(){},;`
 
 	tests := []struct {
@@ -14,6 +15,7 @@ func TestNextToken(t *testing.T) {
 		expectedLiteral string
 	}{
 		{token.ASSIGN, "="},
+		{token.PLUS, "+"},
 		{token.LPAREN, "("},
 		{token.RPAREN, ")"},
 		{token.LBRACE, "{"},
