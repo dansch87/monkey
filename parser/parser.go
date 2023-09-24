@@ -83,6 +83,8 @@ func (p *Parser) peekTokenIs(t token.TokenType) bool {
 }
 
 func (p *Parser) expectPeek(t token.TokenType) bool {
+	// assertion function to check if next Token is valid
+	// if token is valid, advance curToken and peekToken
 	if p.peekTokenIs(t) {
 		p.nextToken()
 		return true
