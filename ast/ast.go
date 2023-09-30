@@ -31,13 +31,13 @@ func (p *Program) TokenLiteral() string {
 }
 
 type LetStatement struct {
-	Token token.Token 	// the token.LET token
-	Name  *Identifier	// holds the identifier of the binding
-	Value Expression	// holds the expression that produces the value
+	Token token.Token // the token.LET token
+	Name  *Identifier // holds the identifier of the binding
+	Value Expression  // holds the expression that produces the value
 }
 
 func (ls *LetStatement) statementNode() {} // satisfies the Statement interface
-func (ls *LetStatement) TokenLiteral() string { 	// satisifes the Node interface
+func (ls *LetStatement) TokenLiteral() string { // satisifes the Node interface
 	return ls.Token.Literal
 }
 
@@ -50,3 +50,11 @@ func (i *Identifier) expressionNode() {}
 func (i *Identifier) TokenLiteral() string {
 	return i.Token.Literal
 }
+
+type ReturnStatement struct {
+	Token       token.Token // the 'return' token
+	ReturnValue Expression
+}
+
+func (rs *ReturnStatement) statementNode() {}
+func (rs *ReturnStatement) TokenLiteral() string { return rs.Token.Literal }
