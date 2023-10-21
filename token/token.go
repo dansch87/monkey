@@ -5,8 +5,8 @@ package token
 type TokenType string
 
 type Token struct {
-	Type    TokenType
-	Literal string
+	Type    TokenType		// e.g. "ASSIGN"  	or "EQ" 
+	Literal string			// e.g. "=" 		or "=="
 }
 
 // Definition and assignment of TokenType to constants
